@@ -1,0 +1,52 @@
+
+@layer utilities {
+  /* Enhanced hover effects */
+  .hover-card {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Pulse animation for icons */
+  .pulse-icon {
+    @apply hover:animate-pulse transition-all duration-300;
+  }
+
+  /* Enhanced gradient border */
+  .gradient-border {
+    @apply relative rounded-lg p-0.5 overflow-hidden;
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--primary)));
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  .gradient-border > div {
+    @apply rounded-md bg-background h-full w-full z-10;
+  }
+
+  /* Enhanced glowing effect */
+  .glow {
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .glow:hover {
+    box-shadow: 0 0 25px rgba(79, 70, 229, 0.7);
+    transform: translateY(-2px);
+  }
+
+  /* Enhanced animated underline for links */
+  .animated-underline {
+    @apply relative;
+  }
+  
+  .animated-underline::after {
+    @apply absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-portfolio-blue to-portfolio-purple transition-all duration-400 content-[''];
+  }
+  
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+}
